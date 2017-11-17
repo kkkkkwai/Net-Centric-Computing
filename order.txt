@@ -1,0 +1,3 @@
+Total number of apple:0
+Total number of orange:0
+Total number of banana:0

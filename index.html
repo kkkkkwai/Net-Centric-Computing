@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fruit Order</title>
+	<!-- Under assets folder is the CSS template downloaded from Internet -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script type="text/javascript" src="validation.js"></script>
+</head>
+<body class="landing">
+	<!-- This is banner section -->
+	<section id="banner">
+		<h2>Fruit Ordering</h2>
+		<p>CZ3006 assignment 2</p>
+	</section>
+	
+	<!-- This is first (form) section -->
+	<section id="one" class="wrapper style2 special">
+		<div class="inner">
+			<!-- This form uses POST method to transfer data -->
+			<!-- When the input data is not valid, a submission is not possible -->
+			<form action="proceedOrder.php" method="post" onsubmit="return checkValidSubmit();">
+				<!-- Name input. String will be checked after key released -->
+				<!-- Text box will turn red when name is not valid (contains numbers) -->
+				<label>Name: </label>
+				<input type="text" name="name" id="name" placeholder="Name" onkeyup="checkValidName();">
+				<br>
+				<!-- Order input. Number will be checked after key released -->
+				<!-- Text box will turn red when number is not valid (not positive integer or 0) -->
+				<label>Num. Of Apples: (69 cents each)</label>
+				<input type="text" name="num_apple" id="num_apple" placeholder="Number of apples" onkeyup="checkValidNum(this);">
+				<br>
+				<label>Num. Of Oranges: (59 cents each)</label>
+				<input type="text" name="num_orange" id="num_orange" placeholder="Number of oranges" onkeyup="checkValidNum(this);">
+				<br>
+				<label>Num. Of Bananas: (39 cents each)</label>
+				<input type="text" name="num_banana" id="num_banana" placeholder="Number of bananas" onkeyup="checkValidNum(this);">
+				<br>
+				<!-- Total cost cannot be focused or changed -->
+				<label>Total ($)</label>
+				<input type="text" name="total_cost" id="total_cost" onfocus="this.blur();" readonly>
+				<br>
+				<!-- Radio for payment method selection. Default is visa -->
+                <label>Payment Method:&nbsp;&nbsp;
+                <input type="radio" name="payment" id="visa" value="Visa" checked /> Visa&nbsp;&nbsp;
+                <input type="radio" name="payment" id="mastercard" value="mastercard" /> MasterCard&nbsp;&nbsp;
+                <input type="radio" name="payment" id="discover" value="discover" /> Discover</label>
+                <!-- Submit and reset buttons -->
+				<ul class="actions">
+					<li><input type="submit" class="special" name="Submit" value="Submit"></li>
+					<li><input type="reset" class="alt" value="Reset"></li>
+				</ul>
+			</form>
+		</div>
+	</section>
+
+</body>
+</html>
