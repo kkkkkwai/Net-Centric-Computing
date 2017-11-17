@@ -21,9 +21,11 @@ if(isset($_POST["Submit"])){
 	else{
 		header("Location: error.html");
 	}
+	exit;
 }
 else{
 	header("Location: error.html");
+	exit;
 }
 
 // The function is to update the total order information in order.txt
